@@ -10,7 +10,7 @@ public class MainController {
 
     @GetMapping("/") //при переходе на главную страницу будет обрабатываться нижеуказанная функция
     public String home(Model model) {
-        model.addAttribute("title","хуй");
+        model.addAttribute("title","йух");
         return "home"; //возвращает шаблон
     }
 
