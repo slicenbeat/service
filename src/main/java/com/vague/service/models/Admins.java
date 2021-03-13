@@ -12,9 +12,6 @@ public class Admins {
 
     private boolean role;
 
-    //@OneToMany(mappedBy = "admin", cascade = CascadeType.ALL)
-    //private List<BlackList> black_users;
-
     public  Admins(){}
 
     public Admins(String login, String password, boolean role, List<BlackList> black_users) {

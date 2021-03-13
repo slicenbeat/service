@@ -6,7 +6,6 @@ import java.sql.Date;
 @Entity
 public class BlackList {
 
-
     @Id
     private String login;
 

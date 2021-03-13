@@ -9,11 +9,11 @@ public class Couples {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @OneToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "login1")
     private Users user1;
 
-    @OneToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "login2")
     private Users user2;
 
@@ -21,6 +21,13 @@ public class Couples {
     private boolean like2;
 
     public Couples(){}
+
+    public Couples(Users user1, Users user2, boolean like1, boolean like2) {
+        this.user1 = user1;
+        this.user2 = user2;
+        this.like1 = like1;
+        this.like2 = like2;
+    }
 
     public int getId() {
         return id;
