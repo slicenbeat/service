@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vague — meet and call!</title>
     <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
+    <script src="../static/script.js"></script>
   </head>
   <body>
     <header class="header">
@@ -23,8 +24,8 @@
             <!--нужно ли менять пароль и логин?-->
             <p class="field-name">Ваше имя</p>
             <input type="text" name="name_user" required />
-            <p class="field-name">Возраст</p>
-            <input type="range" min="18" max="90" step="1" value="18" id="age"> 
+            <p class="field-name" id="one">Возраст</p>
+            <input type="range" min="18" max="90" step="1" value="18" id="age" oninput="rangeValueAge()">
             <p class="field-name">Пол</p>
             <input type="radio" id="Male" value="Male" name="gender"><label class="field-name">Мужской</label>
             <input type="radio" id="Female" value="Female" name="gender"><label class="field-name">Женский</label>
