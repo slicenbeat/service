@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vague — meet and call!</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
   </head>
   <body>
     <header class="header">
-      <h1 class="vague-title">Vague</h1>
+      <h1 class="vague-title" >Vague</h1>
     </header>
     <div class="container">
         <div class="row-cards search-cards">
           <div class="vague-card search-card">
-            <form name = "change-settings" class="change-settings" method="POST" action="">
+            <form name = "change-settings" class="change-settings">
               <p class="field-name">Возраст</p>
               <input type="range" min="18" max="90" step="1" value="18" id="age"> 
               <p class="field-name">Пол</p>

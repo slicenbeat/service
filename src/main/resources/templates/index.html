@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vague — meet and call!</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
   </head>
   <body>
     <header class="header">
@@ -27,18 +27,18 @@
       <div class="row-cards">
         <div class="vague-card login">
           <h1 class="new-user-title">Авторизация</h1>
-          <form name="vague-authorization" method="post" action="">
+          <form name="vague-authorization" method="get" action="/usermain">
             <p class="field-name">Логин</p>
             <input type="text" name="login" required />
             <p class="field-name">Пароль</p>
             <input type="password" name="password" required /><br>
-            <button type="submit" class="btn-block" href="/" >Войти</button>
+            <button type="submit" class="btn-block" href="/">Войти</button>
           </form>
         </div>
 
         <div class="vague-card registration">
           <h1 class="new-user-title">В первый раз?</h1>
-          <form name="vague-registration" method="post" action="">
+          <form name="vague-registration" method="get" action="/settings">
             <p class="field-name">Ваше имя</p>
             <input type="text" name="name_user" required />
             <p class="field-name">Логин</p>
@@ -47,30 +47,30 @@
             <input type="password" name="password" required />
             <p class="field-name">Возраст</p>
             <input type="text" name="age" required />
-            <button type="submit" class="btn-block" href="/" onclick="logIn()">
+            <button type="submit" class="btn-block" href="/">
               Зарегистрироваться
             </button>
           </form>
         </div>
       </div>
+
+
+      <!--<button type="submit" class="btn-block" href="/login" onclick="View()">qwerty</button>-->
+      <form action="/adminmain">
+        <button type="submit">вход для админа (временно)</button>
+      </form>
+
     </div>
 
   <script>
 
-    function logIn(){
-
-      var userName = document.getElementById("name_user").value;
-      var userLogin = document.getElementById("login").value;
-      var userPassword = document.getElementById("password").value;
-      var userAge = document.getElementById("age").value;
-
+    function View(){
       var xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("POST", "http://localhost:8081/vague/login", true);
+      xmlhttp.open("DELETE", "http://localhost:8081/login", true);
       xmlhttp.setRequestHeader("Content-Type", "application/json");
-      xmlhttp.send(JSON.stringify({login: userLogin, password: userPassword, gender: null, place: null, name: userName, info: null, phone: null,   age: userAge}));
-
+      var str = "women2";
+      xmlhttp.send(JSON.stringify({login: str}));
     }
-
 
   </script>
 
