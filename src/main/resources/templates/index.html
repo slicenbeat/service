@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vague — meet and call!</title>
     <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
-    <script src="../static/script.js"></script>
+    <script src="../static/script.js" th:src="@{script.js}"></script>
   </head>
   <body>
     <header class="header">
@@ -63,7 +63,7 @@
 
     </div>
 
-  <script>
+  <!--<script>
 
     function View(){
       var xmlhttp = new XMLHttpRequest();
@@ -72,8 +72,8 @@
       var str = "women2";
       xmlhttp.send(JSON.stringify({login: str}));
     }
-
   </script>
+-->
 
   </body>
 </html>

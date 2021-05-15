@@ -13,8 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 //@RequestMapping
 @AllArgsConstructor
+//@CrossOrigin
 @Log
-@CrossOrigin
 public class MainController {
 
     @GetMapping(value = "/usermain")
