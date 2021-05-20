@@ -144,3 +144,24 @@ input[type=text], input[type=password], input[type=tel], textarea{
   display: flex;
   justify-content: space-around;
 }
+.table-questionnaries{
+  border: 5px;
+}
+.btn-like{
+  font-family: Verdana;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color:white;
+  font-size:medium;
+}
+td{
+  padding: 5px;
+  width: 100px;
+}
+.table-card {
+  font-family: Verdana;
+  padding: 0px 0px 0px 45px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+}
+.about-me{
+  width: 200px;
+}
