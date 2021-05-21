@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vague — meet and call!</title>
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
+    <script src="../static/script.js" th:src="@{script.js}"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="vague-title">Vague</h1>
+    </header>
+    <div class="container">
+      <div class="row-cards">
+        <div class="vague-card settings">
+          <form name = "change-settings" class="change-settings" method="get" action="/usermain">
+            <!--нужно ли менять пароль и логин?-->
+            <p class="field-name">Логин</p> 
+            <input type="text" name="login" required />
+            <p class="field-name">Пароль</p>
+            <input type="password" name="password" required /><br>
+            <!--нужно ли менять пароль и логин?-->
+            <p class="field-name">Ваше имя</p>
+            <input type="text" name="name_user" required />
+            <p class="field-name" id="one">Возраст</p>
+            <input type="range" min="18" max="90" step="1" value="18" id="age" oninput="rangeValueAge()">
+            <p class="field-name">Пол</p>
+            <input type="radio" id="Male" value="Male" name="gender"><label class="field-name">Мужской</label>
+            <input type="radio" id="Female" value="Female" name="gender"><label class="field-name">Женский</label>
+            <p class="field-name">Расскажите о себе</p>
+            <textarea maxlength="500" class="bio" name="user_bio"></textarea>
+            <p class="field-name">Номер телефона</p>
+            <input type="tel" id="phone" name="phone" placeholder="79270243342" pattern="[0-9]{11}" required>
+            <br>
+            <div class="container-btn-save"><button type="submit" class="btn-save" href="/">Сохранить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

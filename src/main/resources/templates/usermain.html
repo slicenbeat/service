@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vague — meet and call!</title>
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header in-main">
+        <h1 class="vague-title">Vague</h1>
+      </header>
+
+      <form class="container-menu" method="get" action="/questionnaires">
+        <button type="submit" class="btn-menu" href="/">Анкеты</button>
+      </form>
+      <form class="container-menu" method="get" action="/match">
+        <button type="submit" class="btn-menu" href="/">Мэтчи</button>
+      </form>
+      <form class="container-menu" method="get" action="/settings">
+        <button type="submit" class="btn-menu" href="/">Настройки</button>
+      </form>
+      <form class="container-menu" method="get" action="/index">
+        <button type="submit" class="btn-menu" href="/">Выйти</button>
+      </form>
+    </div>
+  </body>
+</html>
