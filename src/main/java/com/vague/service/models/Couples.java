@@ -1,8 +1,11 @@
 package com.vague.service.models;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 public class Couples {
 
     @Id
@@ -29,39 +32,5 @@ public class Couples {
         this.like2 = like2;
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public Users getUser1() {
-        return user1;
-    }
-
-    public void setUser1(Users user1) {
-        this.user1 = user1;
-    }
-
-    public Users getUser2() {
-        return user2;
-    }
-
-    public void setUser2(Users user2) {
-        this.user2 = user2;
-    }
-
-    public boolean getLike1() {
-        return like1;
-    }
-
-    public void setLike1(boolean like1) {
-        this.like1 = like1;
-    }
-
-    public boolean getLike2() {
-        return like2;
-    }
-
-    public void setLike2(boolean like2) {
-        this.like2 = like2;
-    }
 }
