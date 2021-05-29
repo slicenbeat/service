@@ -1,14 +1,8 @@
 package com.vague.service.controllers;
-import com.vague.service.models.Users;
-import com.vague.service.repo.BlackListRepo;
-import com.vague.service.repo.UsersRepo;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 //@RequestMapping
@@ -16,6 +10,13 @@ import org.springframework.web.servlet.ModelAndView;
 //@CrossOrigin
 @Log
 public class MainController {
+
+
+    @GetMapping("/")
+    public String greeting(){
+        return "greeting";
+    }
+
 
     @GetMapping(value = "/usermain")
     public String userMainView(){

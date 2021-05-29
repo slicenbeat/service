@@ -4,13 +4,13 @@ import com.vague.service.models.Users;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 //@Repository
 @Component
 public interface UsersRepo extends CrudRepository<Users, String> {
+    Users findByLogin(String login);
 
     @Query(value = "select count(*)*100/(select count(*) from couples where like1 = like2) as result, tab1.age_difference from \n" +
             "(select id as id_couple, abs(user1.age - user2.age) as age_difference from (couples join users user1 on \n" +
