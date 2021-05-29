@@ -62,7 +62,7 @@ body {
 
 .description {
   margin-bottom: 50px;
-  height: 220px;
+  height: 240px;
 }
 
 li{
@@ -76,13 +76,27 @@ li{
 
 .registration, .login {
   width: 300px;
+  padding: 10px 45px 0px 45px;
   text-align: center;
+}
+.registration{
+  padding-bottom: 30px;
+}
+.login-card, .registration-cards{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
 }
 .new-user-title {
   color: white;
   margin-bottom: 50px;
   font-size: 30px;
   text-align:center;
+}
+.new-user-title-login {
+  font-size: 15px;
+
 }
 
 .field-name {
@@ -96,6 +110,9 @@ li{
   font-family: Verdana;
   background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  font-size: 16px;
   color:white;
+}
+.btn-login{
+  margin-bottom: 30px;
 }
 input[type=text], input[type=password], input[type=tel], textarea{
   font-family: Verdana;
@@ -164,4 +181,17 @@ td{
 }
 .about-me{
   width: 200px;
+}
+.main-href{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.welcome-il{
+  text-decoration: none;
+}
+
+.registration-href{;
+  text-decoration: none;
+  color: white;
 }
