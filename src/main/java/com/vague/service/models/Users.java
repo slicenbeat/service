@@ -18,4 +18,16 @@ public class Users {
     @CollectionTable(name = "role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> role;
+
+    public Users() {
+        this.login = "";
+        this.password = "";
+        this.gender = "";
+        this.place = "";
+        this.name = "";
+        this.info = "";
+        this.phone = "79270243342";
+        this.age = 18;
+        this.active = false;
+    }
 }

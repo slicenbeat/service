@@ -16,10 +16,10 @@
           <div class="vague-card ban-card">
             <form name = "change-blacklist" class="change-settings">
               <p class="field-name">Логин</p>
-              <input type="text" name="login" required />
+              <input type="text" id="login" required />
               <div class="container-btn-save blacklist-buttons">
-                <button type="submit" class="btn-save btn-search" href="/">Забанить</button>
-                <button type="submit" class="btn-save btn-search" href="/">Разбанить</button>
+                <button type="submit" class="btn-save btn-search" onclick="banUsers()">Забанить</button>
+                <button type="submit" class="btn-save btn-search" onclick="unbanUsers()">Разбанить</button>
               </div>            
             </form>
             </div>
@@ -35,9 +35,36 @@
         </div>
       -->
         <div class="vague-card table-card">
-
+          <table class="table-questionnaries" id="usersOfBan">
+            <tr>
+              <td><label class="field-name">Логин</label></td>
+              <td><label class="field-name">Дата бана</label></td>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td><label class="field-name" th:text="${user.login}"></label></td>
+                <td><label class="field-name" th:text="${user.date_of_ban}"></label></td>
+            </tr>
+          </table>
         </div>
       </div>
   </div>
-</body>
+
+  <script>
+    function banUsers(){
+      var xhttp = new XMLHttpRequest();
+      var login = document.getElementById("login").value;
+      xhttp.open("GET", "http://localhost:8081/admin/blacklist/ban/" + login, false);
+      xhttp.send();
+    }
+
+    function unbanUsers(){
+      var xhttp = new XMLHttpRequest();
+      var login = document.getElementById("login").value;
+      xhttp.open("GET", "http://localhost:8081/admin/blacklist/unban/" + login, false);
+      xhttp.send();
+
+    }
+  </script>
+
+  </body>
 </html>

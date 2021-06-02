@@ -12,19 +12,17 @@
       <header class="header in-main">
         <h1 class="vague-title">Vague</h1>
       </header>
-
-      <form class="container-menu" method="get" action="/questionnaires">
-        <button type="submit" class="btn-menu" href="/">Анкеты</button>
-      </form>
-      <form class="container-menu" method="get" action="/match">
-        <button type="submit" class="btn-menu" href="/">Мэтчи</button>
-      </form>
-      <form class="container-menu" method="get" action="/settings">
-        <button type="submit" class="btn-menu" href="/">Настройки</button>
-      </form>
-      <form class="container-menu" method="get" action="/index">
-        <button type="submit" class="btn-menu" href="/">Выйти</button>
-      </form>
+      <!-- /user/questionnaires-->
+       <form class="container-menu" method="get" action="/user/questionnaires/0">
+         <button type="submit" class="btn-menu">Анкеты</button>
+       </form>
+       <form class="container-menu" method="get" action="/user/match">
+         <button type="submit" class="btn-menu">Мэтчи</button>
+       </form>
+       <form class="container-menu" method="get" action="/user/settings">
+         <button type="submit" class="btn-menu" href="/">Настройки</button>
+       </form>
+      <a href="/logout">Выйти</a>
     </div>
   </body>
 </html>

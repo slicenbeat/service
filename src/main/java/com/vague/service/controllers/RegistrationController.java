@@ -29,7 +29,6 @@ public class RegistrationController {
             model.put("message", "User exists!");
             return "registration";
         }
-System.out.println(user.getLogin());
         user.setActive(true);
         user.setRole(Collections.singleton(Role.USER));
         usersRepo.save(user);

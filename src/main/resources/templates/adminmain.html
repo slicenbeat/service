@@ -12,10 +12,21 @@
       <h1 class="vague-title">Vague</h1>
     </header>
   </body>
-  <form class="container-menu" method="get" action="/blacklist">
+  <form class="container-menu" method="get" action="/user/questionnaires/0">
+    <button type="submit" class="btn-menu">Анкеты</button>
+  </form>
+  <form class="container-menu" method="get" action="/user/match">
+    <button type="submit" class="btn-menu">Мэтчи</button>
+  </form>
+  <form class="container-menu" method="get" action="/user/settings">
+    <button type="submit" class="btn-menu" href="/">Настройки</button>
+  </form>
+  <form class="container-menu" method="get" action="/admin/blacklist">
     <button type="submit" class="btn-menu" href="/">Черный список</button>
   </form>
-  <form class="container-menu" method="get" action="/statistics">
+  <form class="container-menu" method="get" action="/admin/statistics">
     <button type="submit" class="btn-menu" href="/">Статистика</button>
   </form>
+  <a href="/logout">Выйти</a>
+
 </html>

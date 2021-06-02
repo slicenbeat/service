@@ -15,26 +15,26 @@
     <div class="container">
       <div class="row-cards">
         <div class="vague-card settings">
-          <form name = "change-settings" class="change-settings" method="get" action="/usermain">
+          <form name = "change-settings" class="change-settings" method="post" action="/user/settings" th:object="${user}">
             <!--нужно ли менять пароль и логин?-->
-            <p class="field-name">Логин</p> 
-            <input type="text" name="login" required />
+            <!--<p class="field-name">Логин</p>
+            <input type="text" name="login" required />-->
             <p class="field-name">Пароль</p>
-            <input type="password" name="password" required /><br>
+            <input type="password" name="password" required th:field="*{password}"/><br>
             <!--нужно ли менять пароль и логин?-->
             <p class="field-name">Ваше имя</p>
-            <input type="text" name="name_user" required />
+            <input type="text" name="name_user" required th:field="*{name}"/>
             <p class="field-name" id="one">Возраст</p>
-            <input type="range" min="18" max="90" step="1" value="18" id="age" oninput="rangeValueAge()">
+            <input type="range" min="18" max="90" step="1" id="age" oninput="rangeValueAge()">
             <p class="field-name">Пол</p>
             <input type="radio" id="Male" value="Male" name="gender"><label class="field-name">Мужской</label>
             <input type="radio" id="Female" value="Female" name="gender"><label class="field-name">Женский</label>
             <p class="field-name">Расскажите о себе</p>
-            <textarea maxlength="500" class="bio" name="user_bio"></textarea>
+            <textarea maxlength="500" class="bio" name="user_bio" th:field="*{info}"></textarea>
             <p class="field-name">Номер телефона</p>
             <input type="tel" id="phone" name="phone" placeholder="79270243342" pattern="[0-9]{11}" required>
             <br>
-            <div class="container-btn-save"><button type="submit" class="btn-save" href="/">Сохранить</button>
+            <div class="container-btn-save"><button type="submit" class="btn-save">Сохранить</button>
             </div>
           </form>
         </div>
