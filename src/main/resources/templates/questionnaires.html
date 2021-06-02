@@ -10,7 +10,7 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="vague-title">Vague</h1>
+      <a href="/user/usermain" class="a-title"><h1 class="vague-title">Vague</h1></a>
     </header>
     <div class="container">
         <div class="row-cards search-cards">
@@ -39,7 +39,7 @@
                 <td><label class="field-name" th:text="${user.name}"></label></td>
                 <td><label class="field-name" th:text="${user.age}"></label></td>
                 <td><label class="field-name" th:text="${user.gender}"></label></td>
-                <td><label class="field-name" th:text="${user.info}"></label></td>
+                <td class="td-quest"><label class="field-name" th:text="${user.info}"></label></td>
                 <form action="#" th:action="@{'/user/like/{login}'(login=${user.login})}" th:method="post" >
                 <td><button class="btn-like">Лайк</button></td>
                 </form>

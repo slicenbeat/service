@@ -195,3 +195,9 @@ td{
   text-decoration: none;
   color: white;
 }
+.a-title {
+  text-decoration: none;
+}
+.td-quest {
+  width: 120px;
+}
