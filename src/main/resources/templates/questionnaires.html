@@ -15,16 +15,17 @@
     <div class="container">
         <div class="row-cards search-cards">
           <div class="vague-card search-card">
-            <form name = "change-settings" class="change-settings">
-              <p class="field-name" id="one">Возраст</p>
-              <input type="range" min="18" max="90" step="1" value="18" id="age" oninput="rangeValueAge()">
+            <form name = "change-settings" class="change-settings" action="#">
+              <p class="field-name">Возраст</p>
+              <input type="number" id="selectAge" />
               <p class="field-name">Пол</p>
-              <input type="radio" id="Male" value="Male" name="gender"><label class="field-name">Мужской</label>
-              <input type="radio" id="Female" value="Female" name="gender"><label class="field-name">Женский</label>
-              <div class="container-btn-save"><button type="submit" class="btn-save btn-search" href="/">Поиск</button></div>
+              <input type="radio" id="Male" value="Male" name="selectGenderOne"><label class="field-name">Мужской</label>
+              <input type="radio" id="Female" value="Female" name="selectGenderTwo"><label class="field-name">Женский</label>
+              <div class="container-btn-save"><button type="submit" class="btn-save btn-search" onclick="updateUsers()">Поиск</button></div>
             </form>
         </div>
         <div class="vague-card table-card">
+
           <table class="table-questionnaries" id="usersQuestionnaries">
             <tr>
               <td><label class="field-name">Имя</label></td>
@@ -33,16 +34,38 @@
               <td class="about-me"><label class="field-name">О себе</label></td>
               <td><button class="btn-like">Лайк</button></td>
             </tr>
-            <tr>
-              <td><label class="field-name">Вася ЕБАНЫЙ</label></td>
-              <td><label class="field-name">1000</label></td>
-              <td><label class="field-name">Мужской</label></td>
-              <td class="about-me"><label class="field-name">Описание</label></td>
-              <td><button class="btn-like">Лайк</button></td>
+            <tr th:each="user : ${users}">
+              <div th:if="${user.age} > ${age1}">
+                <td><label class="field-name" th:text="${user.name}"></label></td>
+                <td><label class="field-name" th:text="${user.age}"></label></td>
+                <td><label class="field-name" th:text="${user.gender}"></label></td>
+                <td><label class="field-name" th:text="${user.info}"></label></td>
+                <form action="#" th:action="@{'/user/like/{login}'(login=${user.login})}" th:method="post" >
+                <td><button class="btn-like">Лайк</button></td>
+                </form>
+              </div>
             </tr>
           </table>
         </div>
       </div>
   </div>
+
+  <script>
+    function updateUsers(){
+      var xhttp = new XMLHttpRequest();
+      var age = document.getElementById("selectAge").value;
+      xhttp.open("GET", "http://localhost:8081/user/questionnaires/" + age, true);
+      xhttp.send();
+      setTimeout(zZz, 500);
+      /*var xhttp = new XMLHttpRequest();
+      var age = document.getElementById("selectAge").value;
+      xhttp.open("POST", "http://localhost:8081/user/getUsers", true);
+      xhttp.setRequestHeader("Content-Type", "application/json");
+      xhttp.send(JSON.stringify({age: age}));*/
+    }
+    function zZz(){}
+
+  </script>
+
 </body>
 </html>

@@ -25,7 +25,22 @@
             </form>
         </div>
         <div class="vague-card table-card">
-
+          <table class="table-questionnaries" id="userMatchs">
+            <tr>
+              <td><label class="field-name">Имя</label></td>
+              <td><label class="field-name">Возраст</label></td>
+              <td><label class="field-name">Пол</label></td>
+              <td class="about-me"><label class="field-name">О себе</label></td>
+              <td><label class="field-name">Номер телефона</label></td>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td><label class="field-name" th:text="${user.name}"></label></td>
+                <td><label class="field-name" th:text="${user.age}"></label></td>
+                <td><label class="field-name" th:text="${user.gender}"></label></td>
+                <td><label class="field-name" th:text="${user.info}"></label></td>
+                <td><label class="field-name" th:text="${user.phone}"></label></td>
+            </tr>
+          </table>
         </div>
       </div>
   </div>
