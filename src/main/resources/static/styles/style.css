@@ -162,7 +162,6 @@ input[type=text], input[type=password], input[type=tel], textarea{
   justify-content: space-around;
 }
 .table-questionnaries{
-  border: 5px;
 }
 .btn-like{
   font-family: Verdana;
@@ -200,4 +199,8 @@ td{
 }
 .td-quest {
   width: 120px;
+
+}
+td {
+  border-bottom: 1px solid white;
 }

@@ -34,7 +34,7 @@
               <td class="about-me"><label class="field-name">О себе</label></td>
               <td><button class="btn-like">Лайк</button></td>
             </tr>
-            <tr th:each="user : ${users}">
+            <tr class="td-quest-pref" th:each="user : ${users}">
               <div th:if="${user.age} > ${age1}">
                 <td><label class="field-name" th:text="${user.name}"></label></td>
                 <td><label class="field-name" th:text="${user.age}"></label></td>
