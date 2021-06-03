@@ -10,9 +10,6 @@ import java.sql.Date;
 public class BlackList {
 
     @Id
-    //@OneToOne(fetch = FetchType.EAGER)
-    //@JoinColumn(name = "")
-    //private Users users;
     private String login;
 
     private Date date_of_ban;

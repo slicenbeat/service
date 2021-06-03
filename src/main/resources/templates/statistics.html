@@ -9,14 +9,14 @@
   </head>
   <body>
     <header class="header">
-      <a href="/admin/adminmain" class="a-title"><h1 class="vague-title">Vague</h1></a>
+      <a href="/success" class="a-title"><h1 class="vague-title">Vague</h1></a>
     </header>
     <div class="container">
         <div class="row-cards search-cards">
           <div class="vague-card ban-card">
-            <form name = "change-blacklist" class="change-settings">
+            <form name = "change-blacklist" class="change-settings" action="/admin/statistics/get">
               <div class="container-btn-save blacklist-buttons">
-                <button type="submit" class="btn-save btn-search" href="/">Получить статистику</button>
+                <button type="submit" class="btn-save btn-search">Получить статистику</button>
               </div>            
             </form>
             </div>
@@ -32,8 +32,29 @@
         </div>
       -->
         <div class="vague-card table-card">
-
+          <table class="table-statistics" id="statistics">
+            <tr>
+              <td><label class="field-name">Разница в возрасте</label></td>
+              <td><label class="field-name">Процент пар</label></td>
+            </tr>
+            <tr th:each="stat : ${ageDifference}">
+              <td><label class="field-name" th:text="${stat.value}"></label></td>
+              <td><label class="field-name" th:text="${stat.percent}"></label></td>
+            </tr>
+          </table>
         </div>
+          <div class="vague-card table-card">
+            <table class="table-statistics" id="statisticsTwo">
+              <tr>
+                <td><label class="field-name">Гендеры</label></td>
+                <td><label class="field-name">Процент пар</label></td>
+              </tr>
+              <tr th:each="stat : ${genderCouples}">
+                <td><label class="field-name" th:text="${stat.percent}"></label></td>
+                <td><label class="field-name" th:text="${stat.value}"></label></td>
+              </tr>
+            </table>
+          </div>
       </div>
   </div>
 </body>

@@ -27,7 +27,7 @@
             <input type="text" name="name" required />
 
             <p class="field-name" id="age">Возраст</p>
-            <input type="range" min="18" max="90" step="1" value="18" id="age" oninput="rangeValueAge()">
+            <input type="number" min="18" max="90" id="age"/>
 
             <p class="field-name">Пол</p>
             <input type="text" name="gender" required />
@@ -41,23 +41,12 @@
             <p class="field-name">Номер телефона</p>
             <input type="tel" id="phone" name="phone" placeholder="79270243342" pattern="[0-9]{11}" required>
 
-            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
             <button type="submit" class="btn-block">
                 Зарегистрироваться
             </button>
         </form>
     </div>
 </div>
-
-
-
-<!--<form action="/registration" method="post">
-    <div><label> User Name : <input type="text" name="login"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
-    <div><input type="submit" value="Register"/></div>
-</form>
--->
 </body>
 </html>
 
