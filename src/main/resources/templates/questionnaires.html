@@ -29,6 +29,7 @@
 
           <table class="table-questionnaries" id="usersQuestionnaries">
             <tr>
+              <td><label class="field-name">Логин</label></td>
               <td><label class="field-name">Имя</label></td>
               <td><label class="field-name">Возраст</label></td>
               <td><label class="field-name">Пол</label></td>
@@ -38,6 +39,7 @@
             </tr>
             <tr class="td-quest-pref" th:each="user : ${users}">
               <div th:if="${user.age}">
+                <td><label class="field-name" th:text="${user.login}"></label></td>
                 <td><label class="field-name" th:text="${user.name}"></label></td>
                 <td><label class="field-name" th:text="${user.age}"></label></td>
                 <td><label class="field-name" th:text="${user.gender}"></label></td>
