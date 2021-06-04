@@ -53,12 +53,11 @@ public class AdminService {
         }
         model.addAttribute("ageDifference", splitStatOne);
 
-        List<String> genderCouples = usersRepo.StatistGenderCouples();
-        List<ClassForGetStat> splitStatTwo = new ArrayList<ClassForGetStat>();
-        for (int i = 0; i < genderCouples.size(); i++){
-            splitStatTwo.add(new ClassForGetStat(genderCouples.get(i).split(",")[0] + " + " +
-                    genderCouples.get(i).split(",")[1], genderCouples.get(i).split(",")[2]));
-        }
-        model.addAttribute("genderCouples", splitStatTwo);
+        List<ClassForGetStat> Statist = new ArrayList<>();
+        Statist.add(new ClassForGetStat("Мужской + Женский", Double.toString(usersRepo.StatCoupGend("Мужской", "Женский") +
+                usersRepo.StatCoupGend("Женский", "Мужской"))));
+        Statist.add(new ClassForGetStat("Женский + Женский", Double.toString(usersRepo.StatCoupGend("Женский", "Женский"))));
+        Statist.add(new ClassForGetStat("Мужской + Мужской", Double.toString(usersRepo.StatCoupGend("Мужской", "Мужской"))));
+        model.addAttribute("genderCouples", Statist);
     }
 }
