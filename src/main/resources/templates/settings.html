@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vague — meet and call!</title>
+    <title>Настройки</title>
     <link rel="stylesheet" href="../static/styles/style.css" th:href="@{/styles/style.css}"/>
     <script src="../static/script.js" th:src="@{script.js}"></script>
   </head>
@@ -17,15 +17,15 @@
         <div class="vague-card settings">
           <form name = "change-settings" class="change-settings" method="post" action="/user/settings" th:object="${user}">
             <p class="field-name">Пароль</p>
-            <input type="text" name="password" required th:field="*{password}"/><br>
+            <input type="password" name="password" pattern="^[a-zA-Z0-9_.-]{6,20}$" title="6-20 символов без кириллицы" th:field="*{password}" required/>
             <p class="field-name">Ваше имя</p>
-            <input type="text" name="name_user" required th:field="*{name}"/>
+            <input type="text" name="name" pattern="^[а-яА-ЯёЁ]{3,50}$" title="3-50 символов кириллица" th:field="*{name}" required />
             <p class="field-name" id="one">Возраст</p>
-            <input type="text" min="18" max="90" step="1" id="age" th:field="*{age}" >
+            <input type="number" min="18" max="90" id="age" name="age" title="Регистрация возможна от 18 лет" th:field="*{age}"/>
             <p class="field-name">Расскажите о себе</p>
-            <textarea maxlength="500" class="bio" name="user_bio" th:field="*{info}"></textarea>
+            <textarea maxlength="300" class="bio" name="info" th:field="*{info}"></textarea>
             <p class="field-name">Номер телефона</p>
-            <input type="tel" id="phone" name="phone" placeholder="79270243342" pattern="[0-9]{11}" required th:field="*{phone}">
+            <input type="tel" id="phone" name="phone" placeholder="79270243342" pattern="[0-9]{11}" title="Телефон в формате, указанном в примере" th:field="*{phone}" required>
             <br>
             <div class="container-btn-save"><button type="submit" class="btn-save">Сохранить</button>
             </div>

@@ -10,6 +10,7 @@ import java.sql.Date;
 public class BlackList {
 
     @Id
+    @Column(length = 20)
     private String login;
 
     private Date date_of_ban;

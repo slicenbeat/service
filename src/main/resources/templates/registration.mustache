@@ -4,42 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vague — meet and call!</title>
+    <title>Регистрация</title>
     <link rel="stylesheet" href="styles/style.css"/>
 </head>
 <body>
 <header class="header">
-    <h1 class="vague-title">Vague</h1>
+    <a href="/login" class="a-title"><h1 class="vague-title">Vague</h1></a>
 </header>
-{{#message}}
-    {{message}}
-{{/message}}
 <div class="row-cards registration-cards">
     <div class="vague-card registration">
         <h1 class="new-user-title">В первый раз?</h1>
+        <p class="field-name">{{#message}}
+            {{message}}
+        {{/message}}</p>
         <form name="vague-registration" method="post" action="/registration">
             <p class="field-name">Логин</p>
-            <input type="text" name="login" required />
+            <input type="text" name="login" pattern="^[a-zA-Z0-9_.-]{6,20}$" title="6-20 символов без кириллицы" required />
+
             <p class="field-name">Пароль</p>
-            <input type="password" name="password" required />
+            <input type="password" name="password" pattern="^[a-zA-Z0-9_.-]{6,20}$" title="6-20 символов без кириллицы" required/>
 
             <p class="field-name">Имя</p>
-            <input type="text" name="name" required />
+            <input type="text" name="name" pattern="^[а-яА-ЯёЁ]{3,50}$" title="3-50 символов кириллица" required />
 
             <p class="field-name" id="age">Возраст</p>
-            <input type="number" min="18" max="90" id="age"/>
+            <input type="number" min="18" max="90" value="18" id="age" name="age" title="Регистрация возможна от 18 лет"/>
 
             <p class="field-name">Пол</p>
-            <input type="text" name="gender" required />
+            <!--<input type="text" name="gender" required />-->
+
+            <select id="setgender" name="gender">
+                <option value="Мужской">Мужской</option>
+                <option value="Женский">Женский</option>
+            </select>
 
             <p class="field-name">Город</p>
-            <input type="text" name="place" required />
+            <input type="text" name="place" pattern="^[а-яА-ЯёЁ]{3,30}$" title="3-30 символов кириллица" required/>
 
             <p class="field-name">Расскажите о себе</p>
-            <textarea maxlength="500" class="bio" name="info" required></textarea>
+            <textarea maxlength="300" class="bio" name="info" title="Текст о себе не более 300 символов" required></textarea>
 
             <p class="field-name">Номер телефона</p>
-            <input type="tel" id="phone" name="phone" placeholder="79270243342" pattern="[0-9]{11}" required>
+            <input type="tel" id="phone" name="phone" placeholder="79270243342" pattern="[0-9]{11}" title="Телефон в формате, указанном в примере" required>
 
             <button type="submit" class="btn-block">
                 Зарегистрироваться
